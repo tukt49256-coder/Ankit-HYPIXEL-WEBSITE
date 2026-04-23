@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANKIT HYPIXEL - Best Cracked Minecraft Server</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(0,0,0,0.9);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Home Section */
+        .home {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" stop-color="%23ff6b6b"/><stop offset="100%" stop-color="%23000"/></radialGradient></defs><rect width="100%" height="100%" fill="url(%23a)"/><circle cx="200" cy="200" r="50" fill="%23fff" opacity="0.1"/><circle cx="800" cy="300" r="30" fill="%23fff" opacity="0.1"/><circle cx="400" cy="700" r="40" fill="%23fff" opacity="0.1"/></svg>') center/cover;
+            position: relative;
+        }
+
+        .home h1 {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 20px #ff6b6b, 0 0 30px #ff6b6b, 0 0 40px #ff6b6b; }
+            to { text-shadow: 0 0 20px #4ecdc4, 0 0 30px #4ecdc4, 0 0 40px #4ecdc4; }
+        }
+
+        .home p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .join-btn {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            border: none;
+            padding: 20px 40px;
+            font-size: 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .join-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+
+        .ip-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ip-card {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 500px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from { transform: scale(0.8) translateY(50px); opacity: 0; }
+            to { transform: scale(1) translateY(0); opacity: 1; }
+        }
+
+        .ip-card h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .ip-display {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            font-family: 'Courier New', monospace;
+            font-size: 1.3rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .close-btn {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Server Info */
+        .server-info {
+            background: rgba(0,0,0,0.4);
+            backdrop-filter: blur(10px);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .info-card {
+            background: rgba(255,255,255,0.1);
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .mode-highlight {
+            color: #f39c12;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        /* Discord Section */
+        .discord-section {
+            background: linear-gradient(135deg, #7289da, #99aab5);
+            text-align: center;
+        }
+
+        .discord-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #7289da, #99aab5);
+            color: white;
+            padding: 25px 50px;
+            font-size: 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-top: 2rem;
+            box-shadow: 0 15px 40px rgba(114,137,218,0.4);
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .discord-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(114,137,218,0.6);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: rgba(0,0,0,0.6);
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        .owner-bio {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .home h1 {
+                font-size: 3rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .join-btn, .discord-btn {
+                font-size: 1.3rem;
+                padding: 15px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">ANKIT HYPIXEL</div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section class="home">
+        <div class="container">
+            <h1>ANKIT HYPIXEL</h1>
+            <p>Welcome to ANKIT HYPIXEL Server 😎<br>Best Cracked Minecraft Server!</p>
+            <button class="join-btn" onclick="showIP()">JOIN SERVER</button>
+        </div>
+    </section>
+
+    <!-- IP Modal -->
+    <div id="ipModal" class="ip-modal">
+        <div class="ip-card">
+            <h2>🚀 Server Details</h2>
+            <div class="ip-display">
+                <strong>IP:</strong> ankithypixel.qzz.io<br>
+                <strong>Port:</strong> 45338
+            </div>
+            <button class="close-btn" onclick="hideIP()">CLOSE</button>
+        </div>
+    </div>
+
+    <!-- Server Info Section -->
+    <section class="server-info">
+        <div class="container">
+            <h2 class="section-title">Server Info</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>🎮 Game Modes</h3>
+                    <p>SURVIVAL • LIFESTEAL • <span class="mode-highlight">BEDWARS</span></p>
+                    <p><strong>✨ RandomTeleport Function</strong></p>
+                    <p>New best mode is <strong>BEDWARS</strong> - Join now and become our family part!</p>
+                </div>
+                <div class="info-card">
+                    <h3>⭐ Special Features</h3>
+                    <ul style="text-align: left; margin-top: 1rem;">
+                        <li>✅ Cracked Support</li>
+                        <li>⚡ No Lag</li>
+                        <li>🔧 Custom Plugins</li>
+                        <li>❤️ Friendly Community</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Discord Section -->
+    <section class="discord-section">
+        <div class="container">
+            <h2 class="section-title">Join Our Community</h2>
+            <p style="font-size: 1.5rem; margin-bottom: 2rem;">Connect with players and stay updated!</p>
+            <a href="https://discord.gg/h9xWmBMN" target="_blank" class="discord-btn">JOIN OUR DISCORD</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Contact / Owner Info</h2>
+            <div class="social-links">
+                <a href="https://discord.gg/h9xWmBMN" target="_blank" class="social-btn">💬 Discord</a>
+                <a href="http://www.youtube.com/@ANKIT-HYPIXEL" target="_blank" class="social-btn">📺 YouTube</a>
+            </div>
+            <div class="owner-bio">
+                <p><strong>Hey there! 👋</strong></p>
+                <p>My name is Ankit, I am a 13 year old kid. I am a developer! I choose this passion because I am interested in social media and gaming. I am a small creator, I am a kid that have adult mindset. So that's all about me. Thank you for your support! Love you all ❤️</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function showIP() {
+            document.getElementById('ipModal').style.display = 'flex';
+        }
+
+        function hideIP() {
+            document.getElementById('ipModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('ipModal');
+            if (event.target === modal) {
+                hideIP();
+            }
+        }
+    </script>
+</body>
+</html>
